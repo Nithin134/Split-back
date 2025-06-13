@@ -17,7 +17,7 @@ app.use(express.json());
 
 console.log("🟡 Connecting to MongoDB...");
 
-mongoose.connect('mongodb://127.0.0.1:27017/React', {
+mongoose.connect('mongodb+srv://myAtlasDBUser:Sorry.2.kill@myatlasclusteredu.8vpwie9.mongodb.net/', {
   useNewUrlParser: true,
   useUnifiedTopology: true,
 }).then(() => {
