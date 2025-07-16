@@ -21,7 +21,7 @@ mongoose.connect('mongodb+srv://myAtlasDBUser:Sorry.2.kill@myatlasclusteredu.8vp
   useNewUrlParser: true,
   useUnifiedTopology: true,
 }).then(() => {
-  console.log('✅ MongoDB connected');
+  console.log(' MongoDB connected');
 
   // Only start server AFTER DB is connected
   app.use('/api/auth', authRoutes);
@@ -38,11 +38,11 @@ mongoose.connect('mongodb+srv://myAtlasDBUser:Sorry.2.kill@myatlasclusteredu.8vp
 
 
   app.listen(PORT, () => {
-    console.log(`✅ Server running on port ${PORT}`);
+    console.log(` Server running on port ${PORT}`);
   });
 
     app.use((err, req, res, next) => {
-      console.error("💥 Uncaught error:", err.stack);
+      console.error(" Uncaught error:", err.stack);
       res.status(500).json({ message: "Server crashed" });
   });
 
