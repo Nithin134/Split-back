@@ -3,20 +3,19 @@ import dotenv from 'dotenv';
 import User from '../models/User.js';
 import moment from 'moment';
 
-dotenv.config(); // Load .env config
+dotenv.config(); 
 
-// ✅ Gmail SMTP transporter (with app password)
 const transporter = nodemailer.createTransport({
   host: "smtp.gmail.com",
   port: 587,
-  secure: false, // TLS
+  secure: false, 
   auth: {
     user: process.env.EMAIL_USERNAME,
     pass: process.env.EMAIL_PASSWORD,
   },
 });
 
-// ✅ Notify participant when added to a room
+//  Notify participant when added to a room
 export const sendParticipantNotification = async (user, room, addedByUser) => {
   const message = `Hello ${user.name},
 
@@ -42,7 +41,7 @@ Room Expense Splitter`;
   }
 };
 
-// ✅ Notify all participants when a new expense is added
+//  Notify all participants when a new expense is added
 export const sendExpenseNotification = async (expense, room, paidByUser) => {
   try {
     const populatedParticipants = await Promise.all(
