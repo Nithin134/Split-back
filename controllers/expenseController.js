@@ -3,7 +3,7 @@ import Room from '../models/Room.js';
 import User from '../models/User.js';
 import { sendExpenseNotification } from '../utils/notification.js';
 
-// ✅ Add Expense
+// Add Expense
 export const addExpense = async (req, res) => {
   const { roomId } = req.params;
   const { description, category, amount, participants, paidBy } = req.body;
@@ -41,7 +41,7 @@ export const addExpense = async (req, res) => {
   res.status(201).json(expense);
 };
 
-// ✅ Get Expenses by Room
+// Get Expenses by Room
 export const getExpensesByRoom = async (req, res) => {
   const { roomId } = req.params;
 
@@ -52,7 +52,7 @@ export const getExpensesByRoom = async (req, res) => {
   res.json(expenses);
 };
 
-// ✅ Dashboard Stats
+// Dashboard Stats
 export const getDashboardStats = async (req, res) => {
   const rooms = await Room.find({ createdBy: req.user._id });
   const roomIds = rooms.map(r => r._id);
@@ -70,7 +70,7 @@ export const getDashboardStats = async (req, res) => {
   res.json({ numberRoomsCreated, numberRoomsActive, numberParticipants, numberExpenses });
 };
 
-// ✅ Settlement Calculation
+// Settlement Calculation
 export const getRoomSettlements = async (req, res) => {
   const { roomId } = req.params;
 
@@ -121,7 +121,7 @@ export const getRoomSettlements = async (req, res) => {
   res.json(final);
 };
 
-// ✅ Delete Expense
+// Delete Expense
 export const deleteExpense = async (req, res) => {
   const { expenseId } = req.params;
 
