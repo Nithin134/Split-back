@@ -1,4 +1,3 @@
-// Updated roomController.js with deleteRoom and removeParticipant
 
 import Room from '../models/Room.js';
 import User from '../models/User.js';
